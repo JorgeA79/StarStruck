@@ -7,7 +7,7 @@ module.exports = {
     const { channel } = message.member.voice;
     if (!channel) {
     const embed = new Discord.MessageEmbed()
-    .setDescription("You need to be in a voice channel <a:x_:713677703756251147>")
+    .setDescription("You need to be in a voice channel ❌")
     .setColor(0xC76CF5);
       //IF AUTHOR IS NOT IN VOICE CHANNEL
      return message.channel.send(embed);
@@ -17,7 +17,7 @@ module.exports = {
 
     if (!serverQueue) {
       const embed = new Discord.MessageEmbed()
-      .setDescription("There is nothing playing that i could stop <a:x_:713677703756251147>")
+      .setDescription("There is nothing playing that i could stop ❌")
       .setColor(0xC76CF5);
       return message.channel.send(embed);
     }
@@ -25,7 +25,7 @@ module.exports = {
     serverQueue.songs = [];
     serverQueue.connection.dispatcher.end();
     const embed = new Discord.MessageEmbed()
-    .setDescription("**Stoped the song form playing music** <a:x_:713677703756251147>")
+    .setDescription("**Stoped the music** ❌")
     .setColor(0xC76CF5);
     serverQueue.textChannel.send(embed);
   }
