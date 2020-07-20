@@ -8,8 +8,8 @@ module.exports = {
 
     if (!channel) {
           const embed = new Discord.MessageEmbed()
-    .setDescription("You need to be in a voice channel <a:x_:713677703756251147>")
-    .setColor(0xC76CF5);
+    .setDescription("You need to be in a voice channel ❌")
+    .setColor(0xFFFF00);
       //IF AUTHOR IS NOT IN VOICE CHANNEL
      return message.channel.send(embed);
     }
@@ -18,15 +18,15 @@ module.exports = {
 
     if (!serverQueue) {
       const embed = new Discord.MessageEmbed()
-      .setDescription("There is nothing playing that i could skip <a:x_:713677703756251147>")
-      .setColor(0xC76CF5);
+      .setDescription("There is nothing playing that i could skip ❌")
+      .setColor(0xFFFF00);
       return message.channel.send(embed);
     }
 
     serverQueue.connection.dispatcher.end();
     const embed = new Discord.MessageEmbed()
     .setDescription("✔ | Skipping The Song")
-    .setColor(0xC76CF5);
+    .setColor(0xFFFF00);
     serverQueue.textChannel.send(embed);
   }
 };
