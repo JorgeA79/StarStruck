@@ -16,5 +16,5 @@ module.exports = {
    }else{
    return message.reply('You dont have enough permissions for that')
    }
-   
+  }
 }
