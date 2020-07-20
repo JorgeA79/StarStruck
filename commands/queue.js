@@ -8,8 +8,8 @@ module.exports = {
     if (!channel) {
       //IF AUTHOR IS NOT IN VOICE CHANNEL
           const embed = new Discord.MessageEmbed()
-          .setDescription("**You need to be in a voice channel** <a:x_:713677703756251147>")
-          .setColor(0xC76CF5);
+          .setDescription("**You need to be in a voice channel** ❌")
+          .setColor(0xFFFF00);
       return message.channel.send(embed);
     }
 
@@ -17,17 +17,17 @@ module.exports = {
 
     if (!serverQueue) {
         const embed = new Discord.MessageEmbed()
-          .setDescription("**There is nothing in the queue** <a:x_:713677703756251147>")
-          .setColor(0xC76CF5);
+          .setDescription("**There is nothing in the queue** ❌")
+          .setColor(0xFFFF00);
         return message.channel.send(embed);
     }
       const embed = new Discord.MessageEmbed()
-          .setTitle("Music Queue <a:kawaii:713667075838705698> ")
+          .setTitle("Music Queue 🎶")
           .setDescription(`${serverQueue.songs
         .map((song, index) => index + 1 + ". " + song.title)
         .join("\n\n")}`,
       { split: true })
-          .setColor(0xC76CF5);
+          .setColor(0xFFFF00);
          return message.channel.send(embed);
 
   }
