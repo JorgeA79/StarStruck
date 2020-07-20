@@ -9,9 +9,9 @@ module.exports = {
 	    if(!member) 
 	    return message.reply("Try mentioning the person");	
       
-     member.kick().then((member) => {
-            message.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
-        }) 
+     member.kick()
+     message.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
+      
 
    }else{
    return message.reply('You dont have enough permissions for that')
