@@ -54,7 +54,27 @@ client.on("message", message => {
   
 });
 
-
+var say = "announce";
+    client.on('message', message => {
+	  if (message.author === client.user) return;
+	  if (message.content.startsWith(PREFIX + say)) {
+      
+   if (message.author.hasPermission('ADMINISTRATOR')) {   
+		const args = message.content.slice(PREFIX.length).split(` `);
+		message.delete({ timeout: 1000});
+		if (!args.length) {
+		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+	   }	  
+		const embed = new discord.MessageEmbed()
+   		.setColor(0xFFFF00)
+   		.setDescription(args.splice(1).join(" "))
+   		message.channel.send(embed);
+   }else{
+   return message.reply('You dont have enough permissions for that')
+   }
+		
+	}
+});
 
 
 //DONT DO ANYTHING WITH THIS TOKEN lol
