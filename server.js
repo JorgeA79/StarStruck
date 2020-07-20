@@ -59,7 +59,7 @@ var say = "announce";
 	  if (message.author === client.user) return;
 	  if (message.content.startsWith(PREFIX + say)) {
       
-   if (message.author.hasPermission('ADMINISTRATOR')) {   
+   if (message.member.hasPermission('ADMINISTRATOR')) {   
 		const args = message.content.slice(PREFIX.length).split(` `);
 		message.delete({ timeout: 1000});
 		if (!args.length) {
